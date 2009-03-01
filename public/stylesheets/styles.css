@@ -1,0 +1,14 @@
+body {
+	background-color: #fff;
+	color: #bbb;
+	font-family: "Gill Sans", "MS Trebuchet", sans-serif;
+	letter-spacing: 0.0em;
+	font-size: 14.5px;
+}
+img{border:none;}
+
+a {color:#30ff00;}
+a:hover {color:#000;}
+
+a:visited {color:#30ff00;}
+
