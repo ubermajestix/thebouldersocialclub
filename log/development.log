@@ -180,3 +180,117 @@ Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 15:10:21) [GE
 Rendering template within layouts/social_life
 Rendering social_life/index
 Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:40:20) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:40:35) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:40:46) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:40:57) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:00) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:06) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:12) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:24) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:29) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:33) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:36) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:40) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:45) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:50) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:41:55) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:42:14) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 72ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:42:25) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:42:29) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SocialLifeController#index (for 127.0.0.1 at 2009-03-10 16:42:39) [GET]
+Rendering template within layouts/social_life
+Rendering social_life/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]

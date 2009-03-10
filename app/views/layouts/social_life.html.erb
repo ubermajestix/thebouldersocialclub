@@ -9,8 +9,10 @@
   <%= javascript_include_tag :defaults %>
 </head>
 <body>
-	<center><%= image_tag '/images/logo.png' %></center>
-	<%= yield %>
+	<div style="margin-left:auto; margin-right:auto; width:930px;">
+		<center><%= image_tag '/images/logo.png' %></center>
+		<%= yield %>
+	</div>
 	
 	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
