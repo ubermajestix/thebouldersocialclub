@@ -1,0 +1,32 @@
+<h1>Editing event</h1>
+
+<% form_for(@event) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :theme %><br />
+    <%= f.text_field :theme %>
+  </p>
+  <p>
+    <%= f.label :location_id %><br />
+    <%= f.select :location_id, Location.find(:all).collect{|l|[l.name, l.id]} %>
+  </p>
+  <p>
+    <%= f.label :projected_cost %><br />
+    <%= f.text_field :projected_cost %>
+  </p>
+  <p>
+    <%= f.label :ticket_type_id %><br />
+    <%= f.select :ticket_type_id, TicketType.find(:all).collect{|l|[l.name, l.id]} %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @event %> |
+<%= link_to 'Back', events_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  theme: MyString
+  location_id: 1
+  projected_cost: 1
+  ticket_type_id: 1
+
+two:
+  title: MyString
+  theme: MyString
+  location_id: 1
+  projected_cost: 1
+  ticket_type_id: 1

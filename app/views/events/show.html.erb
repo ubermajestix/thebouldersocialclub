@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @event.title %>
+</p>
+
+<p>
+  <b>Theme:</b>
+  <%=h @event.theme %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @event.location_id %>
+</p>
+
+<p>
+  <b>Projected cost:</b>
+  <%=h @event.projected_cost %>
+</p>
+
+<p>
+  <b>Ticket type:</b>
+  <%=h @event.ticket_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

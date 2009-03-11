@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @location.name %>
+</p>
+
+<p>
+  <b>Street address:</b>
+  <%=h @location.street_address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @location.city %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%=h @location.zip %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%=h @location.cost %>
+</p>
+
+<p>
+  <b>Capacity:</b>
+  <%=h @location.capacity %>
+</p>
+
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
