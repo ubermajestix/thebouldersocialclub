@@ -22,3 +22,14 @@ config.action_controller.perform_caching             = true
 
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
+
+require 'smtp_tls'
+
+ActionMailer::Base.server_settings = {
+  :address => "smtp.gmail.com",
+  :port => "587",
+  :domain => "localhost.localdomain",
+  :authentication => :plain,
+  :user_name => "partybus",
+  :password => "Getonthebus!"
+}

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController 
   layout "standard"
-  
+ before_filter :login_required
   # GET /events
   # GET /events.xml
   def index

@@ -1,4 +1,6 @@
+
 body {
+	margin: 0;
 	background-color: #fff;
 	color: #bbb;
 	font-family: "Gill Sans", "MS Trebuchet", sans-serif;
@@ -11,4 +13,11 @@ a {color:#30ff00;}
 a:hover {color:#000;}
 
 a:visited {color:#30ff00;}
+
+div#page{margin:10pt 10pt 100pt 10pt;}
+div#footer {
+	background: #333;
+	position: bottom;
+	padding: 50px
+}
 

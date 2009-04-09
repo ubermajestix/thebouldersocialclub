@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController        
   layout "standard"
-  
+  before_filter :login_required
   # GET /locations
   # GET /locations.xml
   def index

@@ -9,11 +9,18 @@
   <%= javascript_include_tag :defaults %>
 </head>
 <body>
-	<div style="margin-left:auto; margin-right:auto; width:930px;">
-		<center><%= image_tag '/images/logo.png' %></center>
-		<%= yield %>
-	</div>
+	<div id="page">
+		<div style="margin-left:auto; margin-right:auto; width:930px;">
+			<center><%= link_to image_tag('/images/logo.png'), root_path %></center>
+			<%= yield %>
+		</div>
 	
+
+	</div>	
+	<div id="footer" style="">
+		<span style="float:right">&copy; 2009 thebouldersocialclub.com</span>
+		<%= render :partial => "users/user_bar" %>
+	</div>
 	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -23,7 +30,11 @@
 	var pageTracker = _gat._getTracker("UA-2899967-5");
 	pageTracker._trackPageview();
 	} catch(err) {}</script>
+
 	
+
+	
+
 	
 </body>
 </html>

@@ -1,6 +1,6 @@
 class TicketTypesController < ApplicationController           
   layout "standard"
-  
+  before_filter :login_required
   # GET /ticket_types
   # GET /ticket_types.xml
   def index

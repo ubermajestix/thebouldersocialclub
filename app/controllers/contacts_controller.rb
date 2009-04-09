@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController 
   layout "standard"
+  before_filter :login_required
   # GET /contacts
   # GET /contacts.xml
   def index
