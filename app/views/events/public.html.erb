@@ -1,0 +1,24 @@
+<div style="margin: 20px">
+	
+<p>
+<h1>  <%=h @event.title %></h1>
+</p>
+<%= image_tag @event.image %>
+<p>
+  <b>What's Going Down:</b>
+  <%=h @event.description %>
+</p>
+<p>
+  <b>Show up:</b>
+  <%=h @event.when %>
+</p>
+<p>
+  <b>The Digs:</b>
+  <%=h @event.location.name %><br/>
+	<a onclick="$('map').toggle()">view map</a>
+	<div id="map" style="display:none;" ><%=  @event.location.gmap %></div>
+
+</p>
+
+</div>
+

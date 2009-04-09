@@ -1,17 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  street_address: MyString
-  city: MyString
-  zip: MyString
-  cost: 1
-  capacity: 1
+  name: Tyler's House
+  street_address: "3131 5th St."
+  city: Boulder 
+  zip: "80304"
+  cost: 300
+  capacity: 120
 
 two:
-  name: MyString
-  street_address: MyString
-  city: MyString
-  zip: MyString
-  cost: 1
-  capacity: 1
+  name: WestEndTavern
+  street_address: "8th and Pearl"
+  city: Boulder
+  zip: "80302"
+  cost: 4500
+  capacity: 400

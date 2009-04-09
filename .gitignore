@@ -1,3 +1,5 @@
+*.psd
+*.DS_Store
 log/*
 config/environments/production.rb
 config/initializers/site_keys.rb

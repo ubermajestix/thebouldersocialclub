@@ -1,6 +1,6 @@
 <h1>New event</h1>
 
-<% form_for(@event) do |f| %>
+<% form_for @event, :html=>{:multipart=>true} do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -10,6 +10,18 @@
   <p>
     <%= f.label :theme %><br />
     <%= f.text_field :theme %>
+  </p>
+  <p>
+    <%= f.label :when %><br />
+    <%= f.text_field :when %>
+  </p>
+  <p>  
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows=>10 %>
+  </p>
+  <p>    
+    <%= f.label :picture_location %><br />
+    <%= f.file_field :picture_location %>
   </p>
   <p>
     <%= f.label :location_id %><br />
@@ -24,7 +36,7 @@
     <%= f.select :ticket_type_id, TicketType.find(:all).collect{|l|[l.name, l.id]} %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "save" %>
   </p>
 <% end %>
 

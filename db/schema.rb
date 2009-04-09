@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(:version => 20090409171221) do
     t.integer  "projected_cost"
     t.integer  "ticket_type_id"
     t.text     "notes"
+    t.string   "when"
+    t.string   "picture_location"
+    t.text     "description"
+    t.boolean  "public"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

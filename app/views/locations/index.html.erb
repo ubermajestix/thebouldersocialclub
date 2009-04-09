@@ -1,6 +1,6 @@
 <h1>Listing locations</h1>
 
-<table>
+<table cellspacing=0 cellpadding=5>
   <tr>
     <th>Name</th>
     <th>Street address</th>
@@ -11,12 +11,11 @@
   </tr>
 
 <% for location in @locations %>
-  <tr>
-    <td><%=h location.name %></td>
+  <tr class="<%= cycle 'even' , 'odd' %>">    <td><%=h location.name %></td>
     <td><%=h location.street_address %></td>
     <td><%=h location.city %></td>
     <td><%=h location.zip %></td>
-    <td><%=h location.cost %></td>
+    <td>$<%=h location.cost %></td>
     <td><%=h location.capacity %></td>
     <td><%= link_to 'Show', location %></td>
     <td><%= link_to 'Edit', edit_location_path(location) %></td>

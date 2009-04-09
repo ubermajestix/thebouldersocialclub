@@ -1,6 +1,6 @@
 class EventsController < ApplicationController 
   layout "standard"
- before_filter :login_required
+ before_filter :login_required, :except=>:public
   # GET /events
   # GET /events.xml
   def index
@@ -16,9 +16,16 @@ class EventsController < ApplicationController
   # GET /events/1.xml
   def show
     @event = Event.find(params[:id])
+    respond_to do |format|
+      format.html {}
+    end
+  end
+  
+  def public
+    @event = Event.find(params[:event_id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {render :template =>"events/public", :layout=>"social_life"}
       format.xml  { render :xml => @event }
     end
   end
@@ -42,10 +49,19 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.xml
   def create
+    
+    # save file with _id
+    # want to get an id then save the file
+    # so we need to get the filename, save the record with the filename
+    # then save the file with the right filename with _id
+    
+    @file = params[:event][:picture_location]
+    params[:event][:picture_location] = nil
     @event = Event.new(params[:event])
-
+    
     respond_to do |format|
       if @event.save
+        @event.save_file(@file)
         flash[:notice] = 'Event was successfully created.'
         format.html { redirect_to(@event) }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
@@ -60,7 +76,13 @@ class EventsController < ApplicationController
   # PUT /events/1.xml
   def update
     @event = Event.find(params[:id])
-
+    if params[:event][:picture_location].kind_of? ActionController::UploadedStringIO
+      @file = params[:event][:picture_location]
+      File.open("#{RAILS_ROOT}/public/events/#{@file.original_filename}", "wb"){|f| f.write @file.read}
+      params[:event][:picture_location] = "/events/#{@file.original_filename}"
+    else  
+      params[:event][:picture_location] = @event.picture_location
+    end
     respond_to do |format|
       if @event.update_attributes(params[:event])
         flash[:notice] = 'Event was successfully updated.'
@@ -84,4 +106,13 @@ class EventsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def blast_email
+    event = Event.find(params[:event_id])
+    users = %w"tyler@thebouldersocialclub.com tyler.a.montgomery@gmail.com"
+    users.each do |email_address|
+      PartyBus.deliver_invitation(email_address, event)
+    end
+  end
+  
 end

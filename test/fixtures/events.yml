@@ -1,15 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  theme: MyString
+  title: Hipster/Mountaineer
+  theme: hipsters and mountaineers
+  description: hipsters suck
   location_id: 1
-  projected_cost: 1
-  ticket_type_id: 1
+  projected_cost: 300
+  public: true
 
-two:
-  title: MyString
-  theme: MyString
-  location_id: 1
-  projected_cost: 1
-  ticket_type_id: 1

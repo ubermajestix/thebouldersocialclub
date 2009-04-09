@@ -11,8 +11,8 @@ quentin:
       
 aaron:
   id:                        2
-  login:                     aaron
-  email:                     aaron@example.com
+  login:                     tyler
+  email:                     tyler@thebouldersocialclub.com
   salt:                      ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4 # SHA1('1')
   crypted_password:          4c8324c57e7fcbb0493ff51bcac2667e1f960af5 # 'monkey'
   created_at:                <%= 1.days.ago.to_s :db %>

@@ -1,21 +1,26 @@
 <h1>Listing events</h1>
 
-<table>
+<table cellspacing=0 cellpadding=5>
   <tr>
     <th>Title</th>
     <th>Theme</th>
     <th>Location</th>
-    <th>Projected cost</th>
+    <th> cost</th>
     <th>Ticket type</th>
+<th> public </th>
+<th> created_at </th>
+<th colspan=3> actions </th>
   </tr>
 
 <% for event in @events %>
-  <tr>
+  <tr class="<%= cycle 'even' , 'odd' %>">
     <td><%=h event.title %></td>
     <td><%=h event.theme %></td>
-    <td><%=h event.location_id %></td>
-    <td><%=h event.projected_cost %></td>
+    <td><%=h event.location.name if event.location %></td>
+    <td>$<%=h event.projected_cost %></td>
     <td><%=h event.ticket_type_id %></td>
+		<td> <%= event.public %> </td>
+		<td> <%= event.created_at %> </td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
