@@ -43,4 +43,7 @@ after "deploy:restart" do
   # symlink sitekeys
   run "rm -rf #{current_path}/config/initializers/site_keys.rb"
   run "ln -s  #{shared_path}/site_keys.rb #{current_path}/config/initializers/site_keys.rb"
+  # symlink event images
+  run "rm -rf #{current_path}/public/events/"
+  run "ln -s  #{shared_path}/events/ #{current_path}/public/events/"  
 end
