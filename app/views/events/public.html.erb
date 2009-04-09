@@ -1,4 +1,4 @@
-<div style="margin: 20px">
+<div style="margin: 20px" id="event">
 	
 <p>
 <h1>  <%=h @event.title %></h1>
@@ -6,7 +6,7 @@
 <%= image_tag @event.image %>
 <p>
   <b>What's Going Down:</b>
-  <%=h @event.description %>
+  <div style="width: 350px"><%= @event.description %></div>
 </p>
 <p>
   <b>Show up:</b>

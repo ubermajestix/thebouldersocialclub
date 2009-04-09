@@ -44,6 +44,9 @@ after "deploy:restart" do
   run "rm -rf #{current_path}/config/initializers/site_keys.rb"
   run "ln -s  /home/tyler/apps/deployed/thebouldersocialclub/shared/site_keys.rb #{current_path}/config/initializers/site_keys.rb"
   # symlink event images
-  run "rm -rf #{current_path}/public/events/"
-  run "ln -s  /home/tyler/apps/deployed/thebouldersocialclub/shared/events/ #{current_path}/public/events/"  
+  run "rm -rf /home/tyler/apps/deployed/thebouldersocialclub/current/public/events/"
+  run "ln -s  /home/tyler/apps/deployed/thebouldersocialclub/shared/events/ /home/tyler/apps/deployed/thebouldersocialclub/current/public/events/"  
+  #get latest restful auth - THIS MIGHT TOTALLY FUCK EVERYTHING
+  run "rm -rf /home/tyler/apps/deployed/thebouldersocialclub/current/vendor/plugins/restful_authentication"
+  run "git clone git://github.com/technoweenie/restful-authentication.git restful_authentication"
 end

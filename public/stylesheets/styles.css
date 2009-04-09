@@ -22,4 +22,6 @@ div#footer {
 }
 .even {background: #eee; color:#333;}
 .odd {background: #555; color:#fff;}
+p{color:#333;}
+div#event{color:#333;}
 
