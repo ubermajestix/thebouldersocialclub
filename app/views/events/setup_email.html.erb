@@ -1,3 +1,15 @@
+<h2>Setup email</h2>
+<% form_tag email_event_path(@event) do%>
+<b>emails</b><br/>
+ (one per line)<br/>
+<%= text_area :emails, @emails, :rows=>8 %>
+<%= submit_tag "send"%>
+<% end%>
+
+<br/>
+<hr/>
+<h3>preview:</h3>
+
 <div>
 <a href="http://www.thebouldersocialclub.com"><img src="http://www.thebouldersocialclub.com/images/medium_logo.png" alt="Logo" style="border: none;"/></a>
 <h1>You've Been Invited to:<h2>  <%= @event.title %></h2></h1>
