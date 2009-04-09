@@ -1,10 +1,10 @@
 <div>
 <a href="http://www.thebouldersocialclub.com"><img src="http://www.thebouldersocialclub.com/images/medium_logo.png" alt="Logo" style="border: none;"/></a>
 <h1>You've Been Invited to:<h2>  <%= @event.title %></h2></h1>
-<%= url_for(public_event_path(@event)) %>
+<%= url_for(public_event_url(@event, :host=>"thebouldersocialclub")) %>
 <p>
-  <b>What's Going Down:</b>
-  <%= @event.description %>
+  <b>What's Going Down:</b><br/>
+  <div style="width: 350px"><%= @event.description %></div>
 </p>
 <p>
   <b>Show up:</b><br/>
