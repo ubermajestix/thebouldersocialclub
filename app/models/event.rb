@@ -8,6 +8,6 @@ class Event < ActiveRecord::Base
    end
    
    def image
-     self.picture_location
+     self.picture_location || "/images/no_pic.jpg"
    end
 end

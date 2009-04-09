@@ -23,6 +23,6 @@ ActionMailer::Base.smtp_settings = {
   :port => "587",
   :domain => "localhost.localdomain",
   :authentication => :plain,
-  :user_name => "partybus",
+  :user_name => "partybus@thebouldersocialclub.com",
   :password => "Getonthebus!"
 }

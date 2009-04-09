@@ -110,9 +110,13 @@ class EventsController < ApplicationController
   def blast_email
     event = Event.find(params[:event_id])
     users = %w"tyler@thebouldersocialclub.com tyler.a.montgomery@gmail.com"
-    users.each do |email_address|
-      PartyBus.deliver_invitation(email_address, event)
+    spawn do
+      users.each do |email_address|
+        logger.info "sending email to #{email_address}"
+        PartyBus.deliver_invitation(email_address, event)
+      end
     end
+    redirect_to event_path(event)
   end
   
 end

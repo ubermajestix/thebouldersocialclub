@@ -1,17 +1,19 @@
 <div>
-			<center><a href="http://www.thebouldersocialclub.com"><img src="http://www.thebouldersocialclub.com/images/small_logo.png" alt="Logo"/></a></center>
-			<p>
-</p><h1>  <%= @event.title %></h1>
+<a href="http://www.thebouldersocialclub.com"><img src="http://www.thebouldersocialclub.com/images/medium_logo.png" alt="Logo" style="border: none;"/></a>
+<h1>You've Been Invited to:<h2>  <%= @event.title %></h2></h1>
+<%= url_for(public_event_path(@event)) %>
 <p>
   <b>What's Going Down:</b>
   <%= @event.description %>
 </p>
 <p>
-  <b>Show up:</b>
-<%= @event.when %></p>
+  <b>Show up:</b><br/>
+	 <div style="width: 350px"><%= @event.when %></div>
+</p>
 <p>
-  <b>The Digs:</b>
+  <b>The Digs:</b><br/>
 	<%= @event.location.name %><br/>
-	<%= url_for(@event.location.map_src) %>
+	<%= @event.location.street_address %><br/>
+	<%= @event.location.gmap %>
 </p>
 </div>
