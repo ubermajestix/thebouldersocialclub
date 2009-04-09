@@ -36,14 +36,14 @@ after :deploy, "passenger:restart"
 after "deploy:restart" do
   # symlink production db file
   run "rm -rf #{current_path}/db/production.sqlite3"
-  run "ln -s  #{shared_path}/production.sqlite3 #{current_path}/db/production.sqlite3"
+  run "ln -s  /home/tyler/apps/deployed/thebouldersocialclub/shared/production.sqlite3 #{current_path}/db/production.sqlite3"
   # symlink production env
   run "rm -rf #{current_path}/config/environments/production.rb"
-  run "ln -s  #{shared_path}/production.rb #{current_path}/config/environments/production.rb"
+  run "ln -s  /home/tyler/apps/deployed/thebouldersocialclub/shared/production.rb #{current_path}/config/environments/production.rb"
   # symlink sitekeys
   run "rm -rf #{current_path}/config/initializers/site_keys.rb"
-  run "ln -s  #{shared_path}/site_keys.rb #{current_path}/config/initializers/site_keys.rb"
+  run "ln -s  /home/tyler/apps/deployed/thebouldersocialclub/shared/site_keys.rb #{current_path}/config/initializers/site_keys.rb"
   # symlink event images
   run "rm -rf #{current_path}/public/events/"
-  run "ln -s  #{shared_path}/events/ #{current_path}/public/events/"  
+  run "ln -s  /home/tyler/apps/deployed/thebouldersocialclub/shared/events/ #{current_path}/public/events/"  
 end
