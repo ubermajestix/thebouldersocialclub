@@ -46,7 +46,7 @@ after "deploy:restart" do
   # symlink event images
   run "rm -rf /home/tyler/apps/deployed/thebouldersocialclub/current/public/events"
   run "ln -s  /home/tyler/apps/deployed/thebouldersocialclub/shared/events /home/tyler/apps/deployed/thebouldersocialclub/current/public/events"  
-  #get latest restful auth - THIS MIGHT TOTALLY FUCK EVERYTHING
+  # cp restful auth - might not work
   run "rm -rf /home/tyler/apps/deployed/thebouldersocialclub/current/vendor/plugins/restful_authentication"
-  run "git clone git://github.com/technoweenie/restful-authentication.git #{current_path}/vendor/plugins/restful_authentication"
+  run "cp /home/tyler/apps/deployed/thebouldersocialclub/shared/restful_authentication /home/tyler/apps/deployed/thebouldersocialclub/current/vendor/plugins/restful_authentication "
 end
