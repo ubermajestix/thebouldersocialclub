@@ -1,8 +1,12 @@
 class Location < ActiveRecord::Base
   has_many :events
-  
+  require 'cgi'
   def map_src
-    "http://maps.google.com/maps?hl=en&amp;geocode=&amp;q=#{street_address + "+"+zip}&amp;z=15&amp;output=embed"
+    "http://maps.google.com/maps?hl=en&amp;geocode=&amp;q=#{cgi_address}&amp;z=15&amp;output=embed"
+  end
+  
+  def cgi_address
+    CGI.escape(street_address + "+"+zip)
   end
   
   def gmap

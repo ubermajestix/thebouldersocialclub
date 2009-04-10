@@ -1,0 +1,14 @@
+<%if @contact.errors.length > 0 %>
+	<div id="contact_errors" style="padding:5px; background:#FF5359; color: #fff">
+		There were some problems: <br/>
+			<small><%= @contact.email %> <%= @contact.errors.full_messages.each{|e| e} %></small> <br/>
+	</div>
+<% end %>
+
+<% form_remote_for @contact, :url=>update_contact_path(@contact), :update=>"contact_#{dom_id @contact}" do |c| %>
+	<b>name</b> <br/>
+	<%=  c.text_field :first_name%> <%= c.text_field :last_name %><br/>
+	<b>email</b>
+	<%= c.text_field :email %><br/>
+	<%= submit_tag "save"%>
+<% end%>

@@ -1,5 +1,5 @@
 <div>
-<a href="http://www.thebouldersocialclub.com"><img src="http://www.thebouldersocialclub.com/images/medium_logo.png" alt="Logo" style="border: none;"/></a>
+<a href="http://www.thebouldersocialclub.com"><img src="http://www.thebouldersocialclub.com/images/medium_logo.png" alt="The Boulder Social Club. " style="border: none;"/></a>
 <h1>You've Been Invited to:<h2>  <%= @event.title %></h2></h1>
 <%= url_for(public_event_url(@event, :host=>"thebouldersocialclub.com")) %>
 <p>
@@ -14,6 +14,6 @@
   <b>The Digs:</b><br/>
 	<%= @event.location.name %><br/>
 	<%= @event.location.street_address %><br/>
-	<%= @event.location.gmap %>
+	map: <%= @event.location.map_src %>
 </p>
 </div>

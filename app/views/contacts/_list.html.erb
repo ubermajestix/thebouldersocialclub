@@ -1,0 +1,18 @@
+<%if @errors.length > 0 %>
+	<div id="contact_errors" style="padding:5px; background:#FF5359; color: #fff">
+		There were errors with the following contacts: <br/>
+		<%for c in @errors %>
+			<small><%= c.email %> <%= c.errors.full_messages.each{|e| e} %></small> <br/>
+		<%end%>
+	</div>
+<% end %>
+
+
+<%for contact in @contacts %>
+	<div id="contact_<%= dom_id contact %>" style="color: #000">
+		<%= link_to_remote image_tag('/images/edit.png'), :url => edit_contact_path(contact), :update => "contact_#{dom_id contact}", :method=>:get %>
+		<%= contact.email %> (<%= contact.full_name %>) 
+	</div>
+<%end%>
+
+<%= hidden_field_tag :contact_ids, @contacts.collect{|c| c.id}.join(", ") %>

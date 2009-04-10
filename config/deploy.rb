@@ -48,5 +48,5 @@ after "deploy:restart" do
   run "ln -s  /home/tyler/apps/deployed/thebouldersocialclub/shared/events /home/tyler/apps/deployed/thebouldersocialclub/current/public/events"  
   # cp restful auth - might not work
   run "rm -rf /home/tyler/apps/deployed/thebouldersocialclub/current/vendor/plugins/restful_authentication"
-  run "cp /home/tyler/apps/deployed/thebouldersocialclub/shared/restful_authentication /home/tyler/apps/deployed/thebouldersocialclub/current/vendor/plugins/restful_authentication "
+  run "cp -r /home/tyler/apps/deployed/thebouldersocialclub/shared/restful_authentication /home/tyler/apps/deployed/thebouldersocialclub/current/vendor/plugins/restful_authentication "
 end

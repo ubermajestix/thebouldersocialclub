@@ -1,7 +1,15 @@
 <% if logged_in? -%>
-	<%= link_to current_user.login, "#" %>
+	<%= link_to current_user.login, edit_user_path(current_user) %>
 	<%#= link_to_current_user :content_method => :login %> /
-  <%= link_to "Log out", logout_path, { :title => "Log out" }    %>
+  <%= link_to "signout", logout_path, { :title => "Log out" }    %> /
+	<%= link_to "home", root_path %> /
+	<%= link_to "events", events_path %> /
+	<%= link_to "locations", locations_path %> /
+	<%= link_to "users", users_path %> /
+	<%= link_to "contacts", contacts_path %>
+
+
+
 <% else -%>
 	<%= link_to_login_with_IP 'Not logged in', :style => 'border: none;' %> /
   <%= link_to "Log in",  login_path,  { :title => "Log in" } %> /

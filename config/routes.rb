@@ -1,66 +1,36 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.resources :users
+  map.resource :session
+  map.resources :ticket_types
+  map.resources :contacts
+  map.resources :locations
+  map.resources :users
+  map.resources :events
+  
+  # Event Routes
+  map.public_event "/events/public/:event_id", :controller=>'events', :action=>'public'
+  map.setup_event_email '/events/email/setup/:event_id', :controller=>'events', :action=>'setup_email'
+  map.email_event "/events/email/:event_id", :controller=>'events', :action=>'blast_email'
+ 
+  # Contact Routes
+  map.bulk_create_contacts "/contacts/bulk_create", :controller=>'contacts', :action=>'bulk_create'
+  map.update_contact "/contacts/update/:id", :controller=>"contacts", :action=>"update"
+  map.add_contact "/contacts/add/:id", :controller=>"contacts", :action=>"add_contact"
+  map.auto_complete ':controller/:action', 
+                    :requirements => { :action => /auto_complete_for_\S+/ },
+                    :conditions => { :method => :get }
+  # User Routes
+  map.show_password_form "/users/password_form/:user_id", :controller => 'users', :action => 'show_password_form'
+  
+  # Session Routes
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/super_secret_signup_page', :controller => 'users', :action => 'new'
-  map.resources :users
-
-  map.resource :session
-
-  map.resources :ticket_types
-
-  map.resources :contacts
-
-  map.resources :locations
-
-  map.resources :users
-
-  map.resources :events
   
-  map.public_event "/events/public/:event_id", :controller=>'events', :action=>'public'
-  map.setup_event_email '/events/email/setup/:event_id', :controller=>'events', :action=>'setup_email'
-  map.email_event "/events/email/:event_id", :controller=>'events', :action=>'blast_email'
-  
-
-  # The priority is based upon order of creation: first created -> highest priority.
-
-  # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   map.resources :products
-
-  # Sample resource route with options:
-  #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
-
-  # Sample resource route with sub-resources:
-  #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
-  # Sample resource route with more complex sub-resources
-  #   map.resources :products do |products|
-  #     products.resources :comments
-  #     products.resources :sales, :collection => { :recent => :get }
-  #   end
-
-  # Sample resource route within a namespace:
-  #   map.namespace :admin do |admin|
-  #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-  #     admin.resources :products
-  #   end
-
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-   map.root :controller => "social_life"
-
-  # See how all your routes lay out with "rake routes"
-
-  # Install the default routes as the lowest priority.
-  # Note: These default routes make all actions in every controller accessible via GET requests. You should
-  # consider removing the them or commenting them out if you're using named routes and resources.
+  # Default Routes
+  map.root :controller => "social_life"
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

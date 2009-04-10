@@ -1,0 +1,14 @@
+<%= error_messages_for :user %>
+<% form_for @user do |u| %>
+	<b><%= u.label :login %></b><br/>
+	<%= u.text_field :login %> <br/> 
+	<b><%= u.label :name %></b><br/>      
+	<%= u.text_field :name %><br/>
+	<b><%= u.label :email %></b><br/>         
+	<%= u.text_field :email %><br/>      
+	<div id="password"><%= link_to_remote "edit password", :url=>show_password_form_path(@user), :udpate=>"password" %></div>
+	admin: <%= u.check_box :admin %>
+	member: <%= u.check_box :member %>
+	invitee: <%= u.check_box :invitee %>
+<%= submit_tag "save"%>
+<% end%>

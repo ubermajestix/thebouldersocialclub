@@ -1,8 +1,9 @@
 class EventsController < ApplicationController 
   layout "standard"
- before_filter :login_required, :except=>:public
-  # GET /events
-  # GET /events.xml
+  before_filter :login_required, :except=>:public
+  skip_before_filter :verify_authenticity_token, :only => [:auto_complete_for_contact_email]
+  auto_complete_for :contact, :email
+
   def index
     @events = Event.find(:all)
 
@@ -113,9 +114,13 @@ class EventsController < ApplicationController
   
   def blast_email
     event = Event.find(params[:event_id])
-    emails = params[:emails].split
+    contacts = Contact.find(params[:contact_ids].split(", "))
+    emails = contacts.collect{|c| c.email}
     spawn do
-      emails.each do |email|
+      emails.uniq.each do |email|
+        logger.info "=="*45
+        logger.info "sending email to: #{email}"
+        logger.info "=="*45
         PartyBus.deliver_invitation(email, event)
       end
     end

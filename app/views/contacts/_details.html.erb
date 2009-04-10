@@ -1,0 +1,4 @@
+<div id="contact_<%= dom_id @contact %>" style="color: #000">
+	<%= @contact.email %> (<%= @contact.full_name %>) 
+	<%= link_to_remote image_tag('/images/edit.png'), :url => edit_contact_path(@contact), :update => "contact_#{dom_id @contact}", :method=>:get %>
+</div>

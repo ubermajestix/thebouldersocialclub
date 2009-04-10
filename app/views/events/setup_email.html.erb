@@ -1,15 +1,29 @@
 <h2>Setup email</h2>
-<% form_tag email_event_path(@event) do%>
+<div style="float:right">
+	<% form_remote_tag :url=>add_contact_path, :update=>"to" do%>
+		<b>search email address:</b><br/>
+		<%= text_field_with_auto_complete :contact, :email, :autocomplete => "off" %>
+		<%= submit_tag "add contact"%>
+	<% end%>	
+</div>
+
+
+<% form_remote_tag :url=>bulk_create_contacts_path, :update=>"to" do%>
 <b>emails</b><br/>
- (one per line)<br/>
+ (comma separated)<br/>
 <%= text_area :emails, @emails, :rows=>8 %>
-<%= submit_tag "send"%>
+<%= submit_tag "bulk add contacts"%>
 <% end%>
 
 <br/>
 <hr/>
 <h3>preview:</h3>
+To:<br/><br/>
+<% form_tag  email_event_path(@event) do%>
+<div id="to">
 
+	
+</div>
 <div>
 <a href="http://www.thebouldersocialclub.com"><img src="http://www.thebouldersocialclub.com/images/medium_logo.png" alt="Logo" style="border: none;"/></a>
 <h1>You've Been Invited to:<h2>  <%= @event.title %></h2></h1>
@@ -28,4 +42,8 @@
 	<%= @event.location.street_address %><br/>
 	<%= @event.location.gmap %>
 </p>
-</div>
+</div><br/>
+<%= submit_tag "send"%>
+<% end%>
+
+
